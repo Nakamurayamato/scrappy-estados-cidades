@@ -12,3 +12,8 @@ class ScrapyEstadosCidadesItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
     pass
+
+class Estado(scrapy.Item):
+	cod_uf = scrapy.Field()
+	nome = scrapy.Field()
+	sigla = scrapy.Field()
