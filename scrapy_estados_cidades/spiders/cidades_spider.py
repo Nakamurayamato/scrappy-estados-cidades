@@ -21,7 +21,8 @@ class CidadesSpider(scrapy.Spider):
 	 	cod_uf = response._url.split("&")[1].split("=")[1]
 	 	for item in response.xpath('//*[@id="breadcrumb"]/span').xpath('//li'):
 	 		_url = item.xpath('a').xpath('@href').extract()
-	 		if len(_url) > 0 and 'codmun' in _url[0]:
+	 		li_id = item.xpath('@id').extract()
+	 		if len(_url) > 0 and 'codmun' in _url[0] and len(li_id) > 0 and 'm' in li_id[0]:
 	 			_url = _url[0]
 	 			cidade = Cidade()
 		 		cidade['cod'] = _url.split("&")[1].split("=")[1]
