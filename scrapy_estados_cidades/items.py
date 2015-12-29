@@ -14,6 +14,13 @@ class ScrapyEstadosCidadesItem(scrapy.Item):
     pass
 
 class Estado(scrapy.Item):
-	cod_uf = scrapy.Field()
+	cod = scrapy.Field()
 	nome = scrapy.Field()
 	sigla = scrapy.Field()
+
+class Cidade(scrapy.Item):
+	cod = scrapy.Field()
+	cod_uf = scrapy.Field()
+	nome = scrapy.Field()
+	
+				
